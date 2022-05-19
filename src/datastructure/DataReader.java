@@ -1,5 +1,11 @@
 package datastructure;
+import databases.ConnectToSqlDB;
 
+import java.io.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Stack;
 public class DataReader {
 
 	public static void main(String[] args) {
@@ -19,6 +25,33 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+// Read the text file:
+		FileReader fileReader = null;
+		BufferedReader bufferedReader = null;
+		String data = "";
+
+		String filePath = "src/data/self-driving-car";
+		try {
+			fileReader = new FileReader(filePath);
+			bufferedReader = new BufferedReader(fileReader);
+			while ((data = bufferedReader.readLine()) != null) {
+				System.out.println(data);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("File Not Found Exception");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				fileReader.close();
+				bufferedReader.close();
+			} catch (Exception e) {
+				System.out.println("File already closed");
+			}
+		}
+
+
+		System.out.println(" --------------------using Linked List--------------------- ");
 
 
 

@@ -3,6 +3,7 @@ package math.problems;
 import databases.ConnectToSqlDB;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class LowestNumber {
@@ -26,7 +27,7 @@ public class LowestNumber {
 			e.printStackTrace();
 		}
 		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
-		for(String st:lowestValue){
+		for(String st: Collections.unmodifiableList(lowestValue)){
 			System.out.println(st);
 		}
 	}
