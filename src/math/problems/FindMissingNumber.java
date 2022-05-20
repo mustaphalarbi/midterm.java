@@ -10,5 +10,19 @@ public class FindMissingNumber {
          */
          int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
 
+        int n = array.length + 1;
+
+        //Calculating sum
+        int sum = (n * (n+1))/2;
+
+        /*
+          Traversing an array and subtracting each element with
+          the sum
+         */
+        for(int i = 0; i < array.length; i++) {
+            sum = sum - array[i];
+        }
+
+        System.out.println( " Missing number is " + sum);
     }
 }
